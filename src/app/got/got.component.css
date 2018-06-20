@@ -1,0 +1,91 @@
+#menu{
+  position: fixed;
+  top:0;
+}
+
+.nav{
+}
+
+#house-details{
+  border-color: #1491a5;
+  width: 90%;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right: auto;
+}
+.card-header{
+  text-align: center;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+#house-details > .card-header{
+  background: #17a2b8;
+}
+
+.card-box{
+  width:80%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right:auto;
+  border: 1px solid red;
+  padding:5px;
+}
+
+.card-box > div.card {
+  width:30%;
+  display: inline-block;
+  vertical-align: middle;
+  border-color: #45506d;
+  margin-left:2%
+}
+
+.card-box .card-header{
+  background: #4d597a;
+}
+
+
+h4{
+  text-align: center;
+}
+
+img#emblem{
+  float:right;
+  margin-left:20px;
+}
+
+#prev-page2{
+  float: left;
+  display: inline-block;
+}
+
+#next-page2{
+  position: absolute;
+  right:0;
+  display: inline-block;
+}
+
+#prev2-page{
+  float: left;
+  display: inline-block;
+}
+
+#next2-page{
+  float: right;
+  display: inline-block;
+}
+
+#prev-page, #next-page, .nav a{
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+#prev2-page, #next2-page{
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.details-hidden{
+  visibility: hidden;
+}

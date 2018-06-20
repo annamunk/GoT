@@ -1,18 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import {  HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { GotComponent } from './got/got.component';
+import { GotService } from './got/got.service';
+import {GotWikiService} from './got/got-wiki.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GotComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GotService, GotWikiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

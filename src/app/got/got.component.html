@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Houses</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a id="prev-page" href="#" (click)="loadHouses(prevPage, pageSize)" >
+      <i class="fas fa-chevron-left"></i>
+    </a>
+    <ul class="nav justify-content-center"  *ngIf="houses && houses.length" >
+      <li class="nav-item" *ngFor="let house of houses; let i = index"  >
+        <a class="nav-link" href="#" (click)="loadHouseDetails(i)" >{{house.name}}</a>
+      </li>
+    </ul>
+    <a id="next-page" href="#" (click)="loadHouses(nextPage, pageSize)" >
+      <i class="fas fa-chevron-right"></i>
+    </a>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div id="house-details" class="card" *ngIf="selectedHouse != null">
+  <div class="card-header">
+    {{selectedHouse.name}}
+  </div>
+  <div class="card-body">
+    <img id="emblem" *ngIf="selectedHouse.emblemSrc" [src]="selectedHouse.emblemSrc" alt="emblem">
+      <p *ngIf="selectedHouse.region">
+        <strong>Region: </strong>
+        {{selectedHouse.region}}
+      </p>
+      <p *ngIf="selectedHouse.coatOfArms">
+        <strong>Coat of arms: </strong>
+        {{selectedHouse.coatOfArms}}
+      </p>
+      <p *ngIf="selectedHouse.words">
+        <strong>Words: </strong>
+        "{{selectedHouse.words}}"
+      </p>
+      <p *ngIf="selectedHouse.titles[0] != ''">
+        <strong>Titles: </strong>
+        <span *ngFor="let title of selectedHouse.titles">{{title}},</span>
+      </p>
+      <p *ngIf="selectedHouse.seats[0] != ''">
+        <strong>Seats: </strong>
+        {{selectedHouse.seats}}
+      </p>
+      <p *ngIf="selectedHouse.diedOut">
+        <strong>Died out: </strong>
+        {{selectedHouse.diedOut}}
+      </p>
+      <p *ngIf="selectedHouse.ancestralWeapons[0] != ''">
+        <strong>AncestralWeapons: </strong>
+        {{selectedHouse.ancestralWeapons}}
+      </p>
+      <p *ngIf="selectedHouse.wikiDescription">
+        <strong>Description: </strong>
+        {{selectedHouse.wikiDescription}}
+      </p>
+  </div>
+</div>
+<div class="card-box" *ngIf="selectedHouse != null">
+  <div class="card" *ngIf="selectedHouse.currentLordCharacter">
+    <div class="card-header">
+      Current lord: {{selectedHouse.currentLordCharacter.name}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+  <div class="card" *ngIf="selectedHouse.heirCharacter">
+    <div class="card-header">
+      Heir: {{selectedHouse.heirCharacter.name}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+  <div class="card" *ngIf="selectedHouse.founderCharacter">
+    <div class="card-header">
+      Founder: {{selectedHouse.founderCharacter.name }}
+    </div>
+    <div class="card-body">
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+</div>
+<!--
+<div id="sworn-members"  *ngIf="selectedHouse != null"  style="clear:both" >
+  <div class="sworn-member"  *ngFor="let member of selectedHouse.swornMembersCharArr" style="width:30%; display:inline-block; border: 1px solid black; float: left">
+    <span>Name: {{member.name}}</span><br>
+    <span>Gender: {{member.gender}}</span><br>
+    <span>Culture: {{member.culture}}</span><br>
+    <span>Born: {{member.born}}</span><br>
+    <span>Died: {{member.died}}</span><br>
+    <span>Titles: </span>
+    <span *ngFor="let title of member.titles" >{{title + ', '}}</span>
+    <br>
+    <span>Played by: {{member.playedBy}}</span>
+  </div>
+</div>
+ -->
+
+
